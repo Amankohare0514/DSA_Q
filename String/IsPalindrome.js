@@ -1,4 +1,9 @@
-var isPalindrome = function(s) {
-    let newStr = s.replace(/[^a-z0-9]/gi,"").toLowerCase();
-    return newStr.split("").reverse().join("") === newStr;
-}
+var isPalindrome = function(x) {
+    var result = Number(String(x).split('').reverse().join('')) 
+    if(result == x){
+        return true;
+    }
+    else {
+        return false;
+    }
+ };
