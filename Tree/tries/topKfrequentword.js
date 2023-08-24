@@ -1,17 +1,19 @@
-var topKFrequent = function (words, k) {
-    let map = new Map();
-    for (let word of words) {
-      map.set(word, (map.get(word) || 0) + 1);
+var topKFrequent = function(nums, k) {
+    let result = []
+    let numbers = {}
+    for(let i = 0; i < nums.length; i++) {
+        if(numbers[nums[i]]) {
+            numbers[nums[i]]++
+        } else {
+            numbers[nums[i]] = 1
+        }
     }
-    let arr = [];
-    for (let [word, count] of map.entries()) {
-      arr.push({ word, count });
+    let array = Object.entries(numbers).sort((a,b) => {
+        return a[1] - b[1]
+    })
+    while(result.length != k) {
+        let curr = array.pop()
+        result.push(curr[0])
     }
-    arr.sort((a, b) => {
-      if (a.count === b.count) {
-        return a.word.localeCompare(b.word);
-      }
-      return b.count - a.count;
-    });
-    return arr.slice(0, k).map((item) => item.word);
-  };
+    return result
+};
