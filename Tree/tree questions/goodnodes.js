@@ -1,5 +1,5 @@
 var goodNodes = function(root) {
-    const countgoodnode = ( node , maxSofor)=>{
+    function countgoodnode( node , maxSofor){
         if(!node) return 0;
         const newMax = Math.max(maxSofor , node.val)
         let count = 0;

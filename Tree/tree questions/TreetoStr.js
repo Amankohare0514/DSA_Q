@@ -8,4 +8,4 @@ var tree2str = function(root) {
         result += "(" + tree2str(root.right) + ")"
     }
     return result
-};
+}

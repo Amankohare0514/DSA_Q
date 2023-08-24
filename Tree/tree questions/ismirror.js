@@ -10,4 +10,5 @@ class Solution {
        return node
 }
 }
-//gfg questions
+
+//gfg
